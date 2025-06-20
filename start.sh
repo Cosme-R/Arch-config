@@ -8,6 +8,7 @@ fi
 
 # Lista de pacotes a serem instalados, com comentários explicativos
 PACOTES=(
+
   hyprland                     # Gerenciador de janelas 
   hypridle                     # Gerenciador de ociosidade para o Hyprland (bloqueio, suspensão, etc.)
   hyprcursor                   # Utilitário para configurar o cursor no ambiente Hyprland
@@ -25,6 +26,30 @@ PACOTES=(
   dunst                        # Leve daemon de notificações para ambientes gráficos
   cliphist                     # Gerenciador de histórico da área de transferência compatível com wlroots
   pavucontrol                  # Interface gráfica para controle do volume e dispositivos de áudio (Pulseaudio)
+#
+  ttf-jetbrains-mono-nerd      # Fonte com ícones Nerd, ótima para terminal
+  noto-fonts-emoji             # Emojis coloridos
+  ttf-dejavu                   # Fonte clássica, alta compatibilidade
+  ttf-droid                    # Fonte legível do Android
+  noto-fonts                   # Fontes padrão Noto, para muitos idiomas
+  noto-fonts-cjk               # Fontes CJK (chinês, japonês, coreano)
+  ttf-font-awesome             # Ícones Font Awesome
+  nwg-look                     # Ferramenta gráfica para configurar GTK
+#
+  pipewire                     # Servidor multimídia moderno (áudio e vídeo)
+  pipewire-alsa                # Suporte ALSA via PipeWire
+  pipewire-jack                # Suporte JACK via PipeWire
+  pipewire-pulse               # Emula PulseAudio via PipeWire
+  wireplumber                  # Gerenciador de sessão para PipeWire
+  gstreamer                    # Framework multimídia
+  gst-libav                    # Plugin GStreamer com suporte FFmpeg
+  gst-plugins-base             # Plugins essenciais GStreamer
+  gst-plugins-good             # Plugins de boa qualidade GStreamer
+  gst-plugins-bad              # Plugins experimentais ou menos maduros
+  gst-plugins-ugly             # Plugins com restrições legais/licença
+  ffmpeg                       # Ferramenta para manipulação de áudio/vídeo
+
+
 )
 
 echo "Atualizando o sistema..."
