@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# Verifica se o script está sendo executado como root
-if [[ "$EUID" -ne 0 ]]; then
-  echo "Por favor, execute como root (use sudo)"
-  exit 1
-fi
+su_confirm() {
+  # Verifica se o script está sendo executado como root
+  if [[ "$EUID" -ne 0 ]]; then
+    echo "Por favor, execute como root (use sudo)"
+    exit 1
+  fi
+}
 
 # Lista de pacotes a serem instalados, com comentários explicativos
 PACOTES=(
@@ -51,10 +53,32 @@ PACOTES=(
 
 )
 
-echo "Atualizando o sistema..."
-pacman -Syu --noconfirm
+ZSH_CONF() {
 
-echo "Instalando pacotes Hyprland e dependências..."
-pacman -S --noconfirm "${PACOTES[@]}"
+  pacman -S zsh
+  chsh -s /bin/zsh $USER
+  sh -c "$(wget -O- https://git.io/zinit-install)"
+  touch ~/.zshrc
+  cat necessario/zsh_conf >~/.zshrc
+  source ~/.zshrc
+  sleep 2 && zinit update --all
+}
 
-echo "Instalação concluída com sucesso!"
+FISH() {
+  pacman -S fish
+  pacman -S starfish
+}
+
+update_system() {
+  echo "Atualizando o sistema..."
+  pacman -Syu --noconfirm
+}
+
+hyprland_install() {
+  echo "Instalando pacotes Hyprland e dependências..."
+  pacman -S --noconfirm "${PACOTES[@]}"
+}
+
+sucess_installed() {
+  echo "Instalação concluída com sucesso!"
+}
