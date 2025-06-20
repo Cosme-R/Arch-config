@@ -21,5 +21,5 @@ Um script de configuração inicial pós-instalação do Arch Linux, focado em u
 ## Como usar
 
 1. Clone o repositório:
-
-   cd arch-config
+2. cd arch-config
+3. execute o start.sh
