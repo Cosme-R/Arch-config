@@ -82,3 +82,14 @@ hyprland_install() {
 sucess_installed() {
   echo "Instalação concluída com sucesso!"
 }
+
+
+
+update_system
+su_confirm
+hyprland_install
+ZSH_CONF
+FISH
+sucess_installed
+
+
